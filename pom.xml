@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>com.mycompany</groupId>
+    <artifactId>elearning-management-system</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    
+    <repositories>
+        <!-- You can remove this local repository if not needed -->
+        <!--
+        <repository>
+            <id>local-temp-repo</id>
+            <name>Temporary Local Repository</name>
+            <url>file://${project.basedir}/lib</url>
+        </repository>
+        -->
+        <!-- Add other repositories as needed -->
+    </repositories>
+    
+    <dependencies>
+        <!-- MySQL Connector -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.17</version>
+        </dependency>
+        
+        <!-- jcalender-1.4 -->
+        <dependency>
+            <groupId>com.custom</groupId>
+            <artifactId>jcalender</artifactId>
+            <version>1.4</version>
+        </dependency>
+        
+        <!-- AbsoluteLayout -->
+        <!-- Ensure this is the correct groupId and artifactId -->
+        <dependency>
+            <groupId>org.netbeans.external</groupId>
+            <artifactId>AbsoluteLayout</artifactId>
+            <version>RELEASE220</version>
+        </dependency>
+        
+        <!-- jcaptcha dependency -->
+  <!-- https://mvnrepository.com/artifact/nl.captcha/simplecaptcha -->
+<dependency>
+    <groupId>nl.captcha</groupId>
+    <artifactId>simplecaptcha</artifactId>
+    <version>1.2.1</version>
+</dependency>
+
+
+
+
+
+    </dependencies>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <exec.mainClass>com.mycompany.elearningmanagementsystem.ElearningManagementSystem</exec.mainClass>
+    </properties>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <configuration>
+                    <mainClass>${exec.mainClass}</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
